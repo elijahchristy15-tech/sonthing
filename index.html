@@ -1,48 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Cool Thing</title>
+    <title>hi whats up</title>
     <style>
-      body {
-        background-color: lightblue;
-        transition: background-color 0.5s;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 100px;
-      }
-
-      button {
-        margin: 10px;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-      }
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* centers left to right */
+            align-items: center; /* centers top to bottom */
+            background-color: #f0f0f0;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            border: 2px solid black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial;
+            font-size: 20px;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Count: <span id="count">0</span></h1>
-    <button onclick="increase()">Add 1</button>
-    <button onclick="changeBg()">Change Background</button>
+</head>
+<body>
+    <div class="box">
+        hi whats up
+    </div>
+</body>
+</html>
 
-    <script>
-      // Load count from localStorage, or start at 0
-      let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
-      document.getElementById("count").textContent = count;
-
-      function increase() {
-        count++;
-        document.getElementById("count").textContent = count;
-        localStorage.setItem("count", count);
-      }
-
-      function changeBg() {
-        const colors = ["lightblue", "lightgreen", "pink", "lightyellow", "lavender"];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        document.body.style.backgroundColor = randomColor;
       }
     </script>
   </body>
