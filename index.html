@@ -3,18 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Background</title>
+    <title>A Cool Thing</title>
     <style>
       body {
         background-color: lightblue;
         transition: background-color 0.5s;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
+    <h1>Count: <span id="count">0</span></h1>
+    <button onclick="increase()">Add 1</button>
     <button onclick="changeBg()">Change Background</button>
 
     <script>
+      // Load count from localStorage, or start at 0
+      let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
+      document.getElementById("count").textContent = count;
+
+      function increase() {
+        count++;
+        document.getElementById("count").textContent = count;
+        localStorage.setItem("count", count);
+      }
+
       function changeBg() {
         const colors = ["lightblue", "lightgreen", "pink", "lightyellow", "lavender"];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
